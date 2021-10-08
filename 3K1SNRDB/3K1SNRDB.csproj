@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>_3K1SNRDB</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Bson" Version="2.13.2" />
+    <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.13.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Other\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="C:\Users\MarKson\.nuget\packages\mongodb.driver.core\2.13.2\build\../runtimes/win/native/libzstd.dll" Link="Other\libzstd.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="C:\Users\MarKson\.nuget\packages\mongodb.driver.core\2.13.2\build\../runtimes/win/native/snappy32.dll" Link="Other\snappy32.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="C:\Users\MarKson\.nuget\packages\mongodb.driver.core\2.13.2\build\../runtimes/win/native/snappy64.dll" Link="Other\snappy64.dll" />
+  </ItemGroup>
+
+</Project>
