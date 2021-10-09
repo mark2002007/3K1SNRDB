@@ -21,11 +21,12 @@ namespace _3K1SNRDB.Forms
 
         private void postButton_Click(object sender, EventArgs e)
         {
-            Controler.AddPost(new PostModel
+            Controller.AddPost(new PostModel
             {
                 user_id = curr_user.id,
                 text = createPostTextBox.Text,
-                post_time = DateTime.UtcNow
+                post_time = DateTime.UtcNow,
+                liked_by = new List<Guid>()
             });
             Close();
         }

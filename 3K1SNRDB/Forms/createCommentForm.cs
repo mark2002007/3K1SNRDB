@@ -22,13 +22,14 @@ namespace _3K1SNRDB.Forms
         }
         private void commentButton_Click(object sender, EventArgs e)
         {
-            Controler.AddComment(new CommentModel
+            Controller.AddComment(new CommentModel
             {
             parent_id= parent.id, 
             user_id = curr_user.id, 
             depth = parent is CommentModel? ((CommentModel)parent).depth + 1 : 0, 
             text = createCommentTextBox.Text,
-            comment_time = DateTime.UtcNow
+            comment_time = DateTime.UtcNow,
+            liked_by = new List<Guid>()
             });
             Close();
         }

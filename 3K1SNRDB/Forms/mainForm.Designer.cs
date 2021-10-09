@@ -38,6 +38,7 @@ namespace _3K1SNRDB
             this.postsFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.writePostButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.searchTabPage = new System.Windows.Forms.TabPage();
             this.removeButton = new System.Windows.Forms.Button();
             this.loginTextBox = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@ namespace _3K1SNRDB
             this.interestsColumnHeader = new System.Windows.Forms.ColumnHeader();
             this.isFriendColumnHeader = new System.Windows.Forms.ColumnHeader();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.postsTabPage.SuspendLayout();
             this.postsFlowLayoutPanel.SuspendLayout();
@@ -138,6 +138,17 @@ namespace _3K1SNRDB
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 45);
             this.panel2.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label1.Location = new System.Drawing.Point(3, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(464, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Click to select then \'l\' to Like or \'c\' to Comment";
             // 
             // searchTabPage
             // 
@@ -275,17 +286,6 @@ namespace _3K1SNRDB
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1095, 122);
             this.panel1.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label1.Location = new System.Drawing.Point(3, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(586, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Click on comment to reply, double-click on post to comment";
             // 
             // mainForm
             // 

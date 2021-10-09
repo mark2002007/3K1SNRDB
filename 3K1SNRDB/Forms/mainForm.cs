@@ -37,11 +37,10 @@ namespace _3K1SNRDB
             lastNameTextBox.ForeColor = Color.Gray;
             loginTextBox.ForeColor = Color.Gray;
             searchPostsTextBox.ForeColor = Color.Gray;
-            //
         }
 
-        private void RefreshUsers() => users = Controler.GetAllUsers();
-        private void RefreshPosts() => posts = Controler.GetAllPosts().OrderByDescending(p => p.post_time).ToList();
+        private void RefreshUsers() => users = Controller.GetAllUsers();
+        private void RefreshPosts() => posts = Controller.GetAllPosts().OrderByDescending(p => p.post_time).ToList();
         private void GenerateStream()
         {
             var r = postsFlowLayoutPanel.Controls;
@@ -49,33 +48,57 @@ namespace _3K1SNRDB
                 postsFlowLayoutPanel.Controls.RemoveAt(i);
             foreach (var post in posts)
             {
-                TextBox tb = new();
-                tb.AppendText($"Posted by {Controler.GetUserByID(post.user_id).login} on {post.post_time}");
-                tb.AppendText(Environment.NewLine);
-                tb.AppendText(post.text);
-                tb.Height = 150;
-                tb.Dock = DockStyle.Top;
-                tb.Multiline = true;
-                tb.WordWrap = true;
-                tb.ScrollBars = ScrollBars.Vertical;
-                tb.ReadOnly = true;
-                tb.DoubleClick += tb_DoubleClick;
-                tb.Tag = post;
-                postsFlowLayoutPanel.Controls.Add(tb);
+                TextBox postTextBox = new();
+                postTextBox.AppendText($"Posted by {Controller.GetUserByID(post.user_id).login} on {post.post_time}; Likes {post.liked_by.Count} ({(post.liked_by.Any(i => i == user.id)?"Liked" : "Like")})");
+                postTextBox.AppendText(Environment.NewLine);
+                postTextBox.AppendText(post.text);
+                postTextBox.Height = 150;
+                postTextBox.Dock = DockStyle.Top;
+                postTextBox.Multiline = true;
+                postTextBox.WordWrap = true;
+                postTextBox.ScrollBars = ScrollBars.Vertical;
+                postTextBox.ReadOnly = true;
+                postTextBox.DoubleClick += postTextBox_DoubleClick;
+                postTextBox.KeyPress += postTextBox_KeyPress;
+                postTextBox.Tag = post;
+                postsFlowLayoutPanel.Controls.Add(postTextBox);
+                //
+                //CheckBox cb = new CheckBox();
+                //cb.Text = "Like";
+                //cb.Appearance = Appearance.Button;
+                //cb.AutoSize = true;
+                //cb.ForeColor = Color.;
+                //cb.BackColor = Color.Turquoise;
+                //postsFlowLayoutPanel.Controls.Add(cb);
+                //
                 GenerateComments(post.id);
             }
         }
-
-        private void tb_DoubleClick(object sender, EventArgs e)
+        private void postTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var textBox = (TextBox)sender;
+            if (e.KeyChar == 'l' || e.KeyChar == 'д')
+            {
+                var post = (PostModel)textBox.Tag;
+                if (Controller.GetAllPosts().Find(p => p.id == post.id).liked_by.Any(u_id => u_id == user.id))
+                    Controller.RemoveLike(post, user);
+                else
+                    Controller.AddLike(post, user);
+                RefreshPosts();
+                GenerateStream();
+            }
+            else if(e.KeyChar == 'c') 
+                postTextBox_DoubleClick(sender, e);
+        }
+        private void postTextBox_DoubleClick(object sender, EventArgs e)
         {
             new createCommentForm((PostModel)((TextBox)sender).Tag, user).ShowDialog();
             RefreshPosts();
             GenerateStream();
         }
-
         private void GenerateComments(Guid postId)
         {
-            var comments = Controler.GetAllComments()
+            var comments = Controller.GetAllComments()
                 .GroupBy(c => c.depth)
                 .OrderBy(g => g.Key)
                 .Select(g => g.ToList())
@@ -84,6 +107,7 @@ namespace _3K1SNRDB
             tv.Dock = DockStyle.Top;
             tv.Height = 200;
             tv.AfterSelect += Tv_AfterSelect;
+            tv.KeyPress += Tv_KeyPress;
             List<List<TreeNode>> nodes= new List<List<TreeNode>>();
             for (int i = 0; i < comments.Count(); i++)
             {
@@ -91,7 +115,7 @@ namespace _3K1SNRDB
                 for (int j = 0; j < comments[i].Count();j++)
                 {
                     TreeNode tn = new TreeNode();
-                    tn.Text = comments[i][j].text;
+                    tn.Text = $"{Controller.GetUserByID(comments[i][j].user_id).login}, Likes {comments[i][j].liked_by.Count} ({(comments[i][j].liked_by.Any(i => i == user.id) ? "Liked" : "Like")}); {comments[i][j].text}" ;
                     tn.Tag = comments[i][j];
                     if (comments[i][j].depth == 0)
                     {
@@ -108,6 +132,28 @@ namespace _3K1SNRDB
 
             tv.ExpandAll();
             postsFlowLayoutPanel.Controls.Add(tv);
+        }
+        private void Tv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var comment = (CommentModel)node_selected.Tag;
+            if (e.KeyChar == 'l' || e.KeyChar == 'д')
+            {
+                if (Controller.GetAllComments().Find(c => c.id == comment.id)
+                    .liked_by
+                    .Any(u_id => u_id == user.id))
+                    Controller.RemoveLike(comment, user);
+                else
+                    Controller.AddLike(comment, user);
+                RefreshPosts();
+                GenerateStream();
+            }
+            else if (e.KeyChar == 'c')
+            {
+                new createCommentForm(comment, user).ShowDialog();
+                RefreshPosts();
+                GenerateStream();
+            }
+            e.Handled = true;
         }
         public void RefreshUsersTable()
         {
@@ -128,7 +174,7 @@ namespace _3K1SNRDB
                 usersListView.Items.Add(lvi);
             }
         }
-        public void RefreshUser() => user = Controler.GetUserByLogin(user.login);
+        public void RefreshUser() => user = Controller.GetUserByLogin(user.login);
         private void searchButton_Click(object sender, EventArgs e)
         {
             if(firstNameTextBox.Text != "First Name")
@@ -187,13 +233,13 @@ namespace _3K1SNRDB
         }
         private void addButton_Click(object sender, EventArgs e)
         {
-            Controler.AddFriend(user, Controler.GetUserByLogin(loginTextBox.Text));
+            Controller.AddFriend(user, Controller.GetUserByLogin(loginTextBox.Text));
             RefreshUser();
             RefreshUsersTable();
         }
         private void removeButton_Click(object sender, EventArgs e)
         {
-            Controler.RemoveFriend(user, Controler.GetUserByLogin(loginTextBox.Text));
+            Controller.RemoveFriend(user, Controller.GetUserByLogin(loginTextBox.Text));
             RefreshUser();
             RefreshUsersTable();
         }
@@ -202,7 +248,7 @@ namespace _3K1SNRDB
         }
         private void postsSearchButton_Click(object sender, EventArgs e)
         {
-            posts = posts.Where(p => Controler.GetUserByID(p.user_id).login == searchPostsTextBox.Text)
+            posts = posts.Where(p => Controller.GetUserByID(p.user_id).login == searchPostsTextBox.Text)
                 .ToList();
             GenerateStream();
         }
@@ -222,12 +268,8 @@ namespace _3K1SNRDB
                 searchPostsTextBox.ForeColor = Color.Gray;
             }
         }
-        private void Tv_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            new createCommentForm((CommentModel)e.Node.Tag, user).ShowDialog();
-            RefreshPosts();
-            GenerateStream();
-        }
+        private TreeNode node_selected { get; set; }
+        private void Tv_AfterSelect(object sender, TreeViewEventArgs e) => node_selected = e.Node;
         private void writePostButton_Click(object sender, EventArgs e)
         {
             new createPostForm(user).ShowDialog();

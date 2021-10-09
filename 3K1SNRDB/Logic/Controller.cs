@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace _3K1SNRDB
 {
-    public class Controler
+    public class Controller
     {
         public static bool CheckPassword(string login, string password)
         {
@@ -75,6 +75,38 @@ namespace _3K1SNRDB
         {
             MongoCRUD db = new(Helper.dbName());
             db.InsertRecord("posts", post);
+        }
+
+        public static void AddLike(PostModel post, UserModel user)
+        {
+            MongoCRUD db = new(Helper.dbName());
+            if (db.GetAllRecords<PostModel>("posts")
+                .FirstOrDefault(p => p.id == post.id && p.liked_by.All(u_id => u_id != user.id)) is not null)
+                db.AddLikeToPost(post.id, user.id);
+        }
+
+        public static void RemoveLike(PostModel post, UserModel user)
+        {
+            MongoCRUD db = new(Helper.dbName());
+            if (db.GetAllRecords<PostModel>("posts")
+                .FirstOrDefault(p => p.id == post.id && p.liked_by.Any(u_id => u_id == user.id)) is not null)
+                db.RemoveLikeFromPost(post.id, user.id);
+        }
+
+        public static void RemoveLike(CommentModel comment, UserModel user)
+        {
+            MongoCRUD db = new(Helper.dbName());
+            if (db.GetAllRecords<CommentModel>("comments")
+                .FirstOrDefault(c => c.id == comment.id && c.liked_by.Any(u_id => u_id == user.id)) is not null)
+                db.RemoveLikeFromComment(comment.id, user.id);
+        }
+
+        public static void AddLike(CommentModel comment, UserModel user)
+        {
+            MongoCRUD db = new(Helper.dbName());
+            if (db.GetAllRecords<CommentModel>("comments")
+                .FirstOrDefault(c => c.id == comment.id && c.liked_by.All(u_id => u_id != user.id)) is not null)
+                db.AddLikeToComment(comment.id, user.id);
         }
     }
 }

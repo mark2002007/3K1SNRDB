@@ -19,10 +19,10 @@ namespace _3K1SNRDB
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            if (Controler.CheckPassword(loginTextBox.Text, passwordTextBox.Text))
+            if (Controller.CheckPassword(loginTextBox.Text, passwordTextBox.Text))
             {
                 Hide();
-                var u = Controler.GetUserByLogin(loginTextBox.Text);
+                var u = Controller.GetUserByLogin(loginTextBox.Text);
                 new mainForm(u).Show();
             }
             else
