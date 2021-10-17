@@ -12,22 +12,30 @@
     <PackageReference Include="MongoDB.Bson" Version="2.13.2" />
     <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
     <PackageReference Include="MongoDB.Driver.Core" Version="2.13.2" />
+    <PackageReference Include="Neo4jClient" Version="3.2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Logic\" />
     <Folder Include="Other\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="C:\Users\MarKson\.nuget\packages\mongodb.driver.core\2.13.2\build\../runtimes/win/native/libzstd.dll" Link="Other\libzstd.dll" />
+    <Content
+      Update="C:\Users\MarKson\.nuget\packages\mongodb.driver.core\2.13.2\build\../runtimes/win/native/libzstd.dll"
+      Link="Other\libzstd.dll" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="C:\Users\MarKson\.nuget\packages\mongodb.driver.core\2.13.2\build\../runtimes/win/native/snappy32.dll" Link="Other\snappy32.dll" />
+    <Content
+      Update="C:\Users\MarKson\.nuget\packages\mongodb.driver.core\2.13.2\build\../runtimes/win/native/snappy32.dll"
+      Link="Other\snappy32.dll" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="C:\Users\MarKson\.nuget\packages\mongodb.driver.core\2.13.2\build\../runtimes/win/native/snappy64.dll" Link="Other\snappy64.dll" />
+    <Content
+      Update="C:\Users\MarKson\.nuget\packages\mongodb.driver.core\2.13.2\build\../runtimes/win/native/snappy64.dll"
+      Link="Tools\snappy64.dll" />
   </ItemGroup>
 
 </Project>

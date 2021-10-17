@@ -2,7 +2,7 @@
 
 namespace _3K1SNRDB
 {
-    partial class mainForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@ namespace _3K1SNRDB
             this.searchTabPage = new System.Windows.Forms.TabPage();
             this.removeButton = new System.Windows.Forms.Button();
             this.loginTextBox = new System.Windows.Forms.TextBox();
-            this.addButton = new System.Windows.Forms.Button();
+            this.addFriendButton = new System.Windows.Forms.Button();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
@@ -93,8 +93,8 @@ namespace _3K1SNRDB
             this.searchPostsTextBox.Size = new System.Drawing.Size(198, 31);
             this.searchPostsTextBox.TabIndex = 4;
             this.searchPostsTextBox.Text = "Login";
-            this.searchPostsTextBox.Enter += new System.EventHandler(this.searchPostsTextBox_Enter);
-            this.searchPostsTextBox.Leave += new System.EventHandler(this.searchPostsTextBox_Leave);
+            this.searchPostsTextBox.Enter += new System.EventHandler(this.SearchPostsTextBox_Enter);
+            this.searchPostsTextBox.Leave += new System.EventHandler(this.SearchPostsTextBox_Leave);
             // 
             // postsSearchButton
             // 
@@ -105,7 +105,7 @@ namespace _3K1SNRDB
             this.postsSearchButton.Text = "Search";
             this.postsSearchButton.UseMnemonic = false;
             this.postsSearchButton.UseVisualStyleBackColor = true;
-            this.postsSearchButton.Click += new System.EventHandler(this.postsSearchButton_Click);
+            this.postsSearchButton.Click += new System.EventHandler(this.PostsSearchButton_Click);
             // 
             // postsFlowLayoutPanel
             // 
@@ -128,7 +128,7 @@ namespace _3K1SNRDB
             this.writePostButton.TabIndex = 0;
             this.writePostButton.Text = "Write Post";
             this.writePostButton.UseVisualStyleBackColor = true;
-            this.writePostButton.Click += new System.EventHandler(this.writePostButton_Click);
+            this.writePostButton.Click += new System.EventHandler(this.WritePostButton_Click);
             // 
             // panel2
             // 
@@ -154,7 +154,7 @@ namespace _3K1SNRDB
             // 
             this.searchTabPage.Controls.Add(this.removeButton);
             this.searchTabPage.Controls.Add(this.loginTextBox);
-            this.searchTabPage.Controls.Add(this.addButton);
+            this.searchTabPage.Controls.Add(this.addFriendButton);
             this.searchTabPage.Controls.Add(this.lastNameTextBox);
             this.searchTabPage.Controls.Add(this.searchButton);
             this.searchTabPage.Controls.Add(this.firstNameTextBox);
@@ -176,7 +176,7 @@ namespace _3K1SNRDB
             this.removeButton.TabIndex = 7;
             this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
-            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            this.removeButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // loginTextBox
             // 
@@ -185,18 +185,18 @@ namespace _3K1SNRDB
             this.loginTextBox.Size = new System.Drawing.Size(150, 31);
             this.loginTextBox.TabIndex = 6;
             this.loginTextBox.Text = "Login";
-            this.loginTextBox.Enter += new System.EventHandler(this.loginTextBox_Enter);
-            this.loginTextBox.Leave += new System.EventHandler(this.loginTextBox_Leave);
+            this.loginTextBox.Enter += new System.EventHandler(this.LoginTextBox_Enter);
+            this.loginTextBox.Leave += new System.EventHandler(this.LoginTextBox_Leave);
             // 
-            // addButton
+            // addFriendButton
             // 
-            this.addButton.Location = new System.Drawing.Point(807, 74);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(112, 34);
-            this.addButton.TabIndex = 5;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addFriendButton.Location = new System.Drawing.Point(807, 74);
+            this.addFriendButton.Name = "addFriendButton";
+            this.addFriendButton.Size = new System.Drawing.Size(112, 34);
+            this.addFriendButton.TabIndex = 5;
+            this.addFriendButton.Text = "Add";
+            this.addFriendButton.UseVisualStyleBackColor = true;
+            this.addFriendButton.Click += new System.EventHandler(this.AddFriendButton_Click);
             // 
             // lastNameTextBox
             // 
@@ -205,8 +205,8 @@ namespace _3K1SNRDB
             this.lastNameTextBox.Size = new System.Drawing.Size(150, 31);
             this.lastNameTextBox.TabIndex = 4;
             this.lastNameTextBox.Text = "Last Name";
-            this.lastNameTextBox.Enter += new System.EventHandler(this.lastNameTextBox_Enter);
-            this.lastNameTextBox.Leave += new System.EventHandler(this.lastNameTextBox_Leave);
+            this.lastNameTextBox.Enter += new System.EventHandler(this.LastNameTextBox_Enter);
+            this.lastNameTextBox.Leave += new System.EventHandler(this.LastNameTextBox_Leave);
             // 
             // searchButton
             // 
@@ -216,7 +216,7 @@ namespace _3K1SNRDB
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // firstNameTextBox
             // 
@@ -225,8 +225,8 @@ namespace _3K1SNRDB
             this.firstNameTextBox.Size = new System.Drawing.Size(150, 31);
             this.firstNameTextBox.TabIndex = 2;
             this.firstNameTextBox.Text = "First Name";
-            this.firstNameTextBox.Enter += new System.EventHandler(this.firstNameTextBox_Enter);
-            this.firstNameTextBox.Leave += new System.EventHandler(this.firstNameTextBox_Leave);
+            this.firstNameTextBox.Enter += new System.EventHandler(this.FirstNameTextBox_Enter);
+            this.firstNameTextBox.Leave += new System.EventHandler(this.FirstNameTextBox_Leave);
             // 
             // usersListView
             // 
@@ -276,7 +276,7 @@ namespace _3K1SNRDB
             // 
             // isFriendColumnHeader
             // 
-            this.isFriendColumnHeader.Text = "Friend?";
+            this.isFriendColumnHeader.Text = "Distance";
             this.isFriendColumnHeader.Width = 75;
             // 
             // panel1
@@ -287,13 +287,13 @@ namespace _3K1SNRDB
             this.panel1.Size = new System.Drawing.Size(1095, 122);
             this.panel1.TabIndex = 8;
             // 
-            // mainForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1109, 951);
             this.Controls.Add(this.tabControl);
-            this.Name = "mainForm";
+            this.Name = "MainForm";
             this.Text = "Social Network";
             this.tabControl.ResumeLayout(false);
             this.postsTabPage.ResumeLayout(false);
@@ -323,7 +323,7 @@ namespace _3K1SNRDB
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ColumnHeader loginColumnHeader;
         private System.Windows.Forms.TextBox loginTextBox;
-        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button addFriendButton;
         private System.Windows.Forms.TextBox lastNameTextBox;
         private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.Button removeButton;

@@ -1,6 +1,6 @@
 ﻿namespace _3K1SNRDB
 {
-    partial class signInForm
+    partial class SignInForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -43,7 +43,7 @@
             this.loginButton.TabIndex = 0;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // loginLabel
             // 
@@ -87,7 +87,7 @@
             this.Controls.Add(this.loginTextBox);
             this.Controls.Add(this.loginLabel);
             this.Controls.Add(this.loginButton);
-            this.Name = "signInForm";
+            this.Name = "SignInForm";
             this.Text = "Sign In";
             this.ResumeLayout(false);
             this.PerformLayout();

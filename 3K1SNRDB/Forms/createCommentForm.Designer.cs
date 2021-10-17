@@ -1,6 +1,6 @@
 ﻿namespace _3K1SNRDB.Forms
 {
-    partial class createCommentForm
+    partial class CreateCommentForm
     {
         /// <summary>
         /// Required designer variable.
@@ -48,7 +48,7 @@
             this.commentButton.TabIndex = 1;
             this.commentButton.Text = "Comment";
             this.commentButton.UseVisualStyleBackColor = true;
-            this.commentButton.Click += new System.EventHandler(this.commentButton_Click);
+            this.commentButton.Click += new System.EventHandler(this.CommentButton_Click);
             // 
             // createCommentForm
             // 
@@ -57,7 +57,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.commentButton);
             this.Controls.Add(this.createCommentTextBox);
-            this.Name = "createCommentForm";
+            this.Name = "CreateCommentForm";
             this.Text = "CreateComment";
             this.ResumeLayout(false);
             this.PerformLayout();

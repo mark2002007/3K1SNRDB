@@ -1,6 +1,6 @@
 ﻿namespace _3K1SNRDB.Forms
 {
-    partial class createPostForm
+    partial class CreatePostForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@
             this.postButton.TabIndex = 3;
             this.postButton.Text = "Post";
             this.postButton.UseVisualStyleBackColor = true;
-            this.postButton.Click += new System.EventHandler(this.postButton_Click);
+            this.postButton.Click += new System.EventHandler(this.PostButton_Click);
             // 
             // createPostTextBox
             // 

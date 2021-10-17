@@ -1,34 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _3K1SNRDB.Forms
-{
-    public partial class createPostForm : Form
-    {
-        private UserModel curr_user;
-        public createPostForm(UserModel curr_user)
-        {
-            InitializeComponent();
-            this.curr_user = curr_user;
-        }
+namespace _3K1SNRDB.Forms;
 
-        private void postButton_Click(object sender, EventArgs e)
+public partial class CreatePostForm : Form
+{
+    private readonly UserModel _currentUser;
+
+    public CreatePostForm(UserModel currentUser)
+    {
+        InitializeComponent();
+        _currentUser = currentUser;
+    }
+
+    private void PostButton_Click(object sender, EventArgs e)
+    {
+        Controller.AddPost(new PostModel
         {
-            Controller.AddPost(new PostModel
-            {
-                user_id = curr_user.id,
-                text = createPostTextBox.Text,
-                post_time = DateTime.UtcNow,
-                liked_by = new List<Guid>()
-            });
-            Close();
-        }
+            user_id = _currentUser.id,
+            text = createPostTextBox.Text,
+            post_time = DateTime.UtcNow,
+            liked_by = new List<Guid>()
+        });
+        Close();
     }
 }

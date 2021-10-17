@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="UI">
+    <Position X="3.142" Y="9.257" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="Models">
+    <Position X="11.939" Y="9.22" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="DAL">
+    <Position X="8.344" Y="9.259" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="BLL">
+    <Position X="5.662" Y="9.28" Height="0.291" Width="0.7" />
+  </Comment>
+  <Comment CommentText="Tools">
+    <Position X="11.135" Y="14.478" Height="0.291" Width="0.7" />
+  </Comment>
+  <Class Name="_3K1SNRDB.Logic.Neo4jCRUD">
+    <Position X="8" Y="12.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>DAL\Neo4jCRUD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_3K1SNRDB.PostModel" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAABAAAACAAAAAAAAAAAAAAIAAAAAAAAAgA=</HashCode>
+      <FileName>Models\PostModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="_3K1SNRDB.CommentModel" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAACAAAAAQAAAAAAAAIgAAAIAAAAgA=</HashCode>
+      <FileName>Models\CommentModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="_3K1SNRDB.Helper">
+    <Position X="10.75" Y="15" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Tools\Helper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_3K1SNRDB.MongoCRUD">
+    <Position X="8" Y="9.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEABAAAAAESAAAA0hBQAAAAAAAAAAABAQAICAAAAAI=</HashCode>
+      <FileName>DAL\MongoCRUD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_3K1SNRDB.UserModel">
+    <Position X="10.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAQAgAAAAAAAAAAAgAAAAAAAAAgAAUgA=</HashCode>
+      <FileName>Models\UserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_3K1SNRDB.MainForm">
+    <Position X="2.75" Y="9.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AnAAIGAACCAAwBQESBHAjAACUM4bwIAQECAAQQAYNQA=</HashCode>
+      <FileName>Forms\MainForm.cs</FileName>
+      <NewMemberFileName>Forms\mainForm.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_3K1SNRDB.Forms.CreateCommentForm">
+    <Position X="0.5" Y="14.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgACAEAABAAgCAAAACAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Forms\CreateCommentForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_3K1SNRDB.SignInForm">
+    <Position X="0.5" Y="9.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAASAAAAAAACCAAAACAAAAACAAAACAAABAAAA=</HashCode>
+      <FileName>Forms\SignInForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_3K1SNRDB.Forms.CreatePostForm">
+    <Position X="0.5" Y="12" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAACAAAAAAAECAAABCAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Forms\CreatePostForm.cs</FileName>
+      <NewMemberFileName>Forms\createPostForm.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="_3K1SNRDB.Controller">
+    <Position X="5.25" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAkAAAAIAQQAEABAAAIgAAAAAAAAAAAAAAAIAIEAAAA=</HashCode>
+      <FileName>BLL\Controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="_3K1SNRDB.ICommentable">
+    <Position X="10.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\ICommentable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
