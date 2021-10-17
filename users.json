@@ -1,0 +1,197 @@
+[{
+  "_id": {
+    "$binary": {
+      "base64": "VA4kMJ57MEKdnIw1ZYjz8w==",
+      "subType": "03"
+    }
+  },
+  "login": "mark2002007",
+  "password": "1111",
+  "first_name": "Markiian",
+  "last_name": "Mandzak",
+  "email": "markmandzak2002@gmail.com",
+  "interests": [
+    "Diving",
+    "Karate",
+    "Football"
+  ],
+  "friends_id": [
+    {
+      "$binary": {
+        "base64": "0nFfYgmwNU6ron2KxSZPsQ==",
+        "subType": "03"
+      }
+    },
+    {
+      "$binary": {
+        "base64": "GomtbQcNlEmoiFMUcnCcgA==",
+        "subType": "03"
+      }
+    }
+  ]
+},{
+  "_id": {
+    "$binary": {
+      "base64": "GomtbQcNlEmoiFMUcnCcgA==",
+      "subType": "03"
+    }
+  },
+  "login": "terryg333",
+  "password": "333",
+  "first_name": "Terry",
+  "last_name": "Golway",
+  "email": "terryg@gmail.com",
+  "interests": [
+    "Writing",
+    "Philosophy"
+  ],
+  "friends_id": []
+},{
+  "_id": {
+    "$binary": {
+      "base64": "0nFfYgmwNU6ron2KxSZPsQ==",
+      "subType": "03"
+    }
+  },
+  "login": "gerik123",
+  "password": "123",
+  "first_name": "German",
+  "last_name": "Travolta",
+  "email": "germant@gmail.com",
+  "interests": [
+    "Basketball",
+    "Judo",
+    "Reading"
+  ],
+  "friends_id": [
+    {
+      "$binary": {
+        "base64": "VA4kMJ57MEKdnIw1ZYjz8w==",
+        "subType": "03"
+      }
+    }
+  ]
+},{
+  "_id": {
+    "$binary": {
+      "base64": "+QJ7E/DOwUS6ApPIzWTg9g==",
+      "subType": "03"
+    }
+  },
+  "login": "cilloferry",
+  "password": "cillianpassword",
+  "first_name": "Cillian",
+  "last_name": "Ferry",
+  "email": "cillianf@gmail.com",
+  "interests": [
+    "Baseball"
+  ],
+  "friends_id": []
+},{
+  "_id": {
+    "$binary": {
+      "base64": "VqxLMK3fmkyNnBXwZSEcvw==",
+      "subType": "03"
+    }
+  },
+  "login": "winstonNIC",
+  "password": "winstonPassword",
+  "first_name": "Winston",
+  "last_name": "Nicholls",
+  "email": "winstonn@gmail.com",
+  "interests": [
+    "Programming",
+    "Gym",
+    "Cooking"
+  ],
+  "friends_id": []
+},{
+  "_id": {
+    "$binary": {
+      "base64": "HrkN1rfJYEObcYAADSvo+Q==",
+      "subType": "03"
+    }
+  },
+  "login": "BigBridgerBuilder",
+  "password": "laurelPassword",
+  "first_name": "Laurel",
+  "last_name": "Bridges",
+  "email": "laurelb@gmail.com",
+  "interests": [
+    "Building Bridges",
+    "Architecture",
+    "Art"
+  ],
+  "friends_id": []
+},{
+  "_id": {
+    "$binary": {
+      "base64": "go2VbyWB40yyyB9jdyeRZw==",
+      "subType": "03"
+    }
+  },
+  "login": "FireLord23",
+  "password": "munnebPassword",
+  "first_name": "Muneeb",
+  "last_name": "Burns",
+  "email": "munnebb@gmail.com",
+  "interests": [
+    "Fire Fighting",
+    "Spikeball",
+    "Knitting"
+  ],
+  "friends_id": []
+},{
+  "_id": {
+    "$binary": {
+      "base64": "n/HnOe4+JE27EYB+o9pTgQ==",
+      "subType": "03"
+    }
+  },
+  "login": "BestSeller1",
+  "password": "raulpassword",
+  "first_name": "Raul",
+  "last_name": "Sellers",
+  "email": "rauls@gmail.com",
+  "interests": [
+    "Marketing Managering",
+    "Law",
+    "Football"
+  ],
+  "friends_id": []
+},{
+  "_id": {
+    "$binary": {
+      "base64": "Hiq0IN3j00yR4YIxXrp33A==",
+      "subType": "03"
+    }
+  },
+  "login": "SapphireMine3",
+  "password": "sapphirePassword",
+  "first_name": "Sapphire",
+  "last_name": "Holden",
+  "email": "sapphireh@gmail.com",
+  "interests": [
+    "Jewelry",
+    "Music",
+    "Gaming"
+  ],
+  "friends_id": []
+},{
+  "_id": {
+    "$binary": {
+      "base64": "SoekC5NEL0akeUcKLDv25w==",
+      "subType": "03"
+    }
+  },
+  "login": "CocoLes4132",
+  "password": "cocoPassword",
+  "first_name": "Coco",
+  "last_name": "Coles",
+  "email": "cococ@gmail.com",
+  "interests": [
+    "Guitar",
+    "Fighting"
+  ],
+  "friends_id": []
+}]
