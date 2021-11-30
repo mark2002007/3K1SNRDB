@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using _3K1SNRDB.DAL;
 using _3K1SNRDB.Logic;
 
 namespace _3K1SNRDB;
@@ -71,9 +73,20 @@ public class Controller
 
     public static List<UserModel> GetAllUsers()
     {
-        MongoCRUD db = new(Helper.CnnVal());
-        var res = db.GetAllRecords<UserModel>("users");
+        string recordKey = $"Users_" + DateTime.Now.ToString("yyyyMMdd_hh");
+        var res = RedisCRUD.GetRecord<List<UserModel>>(recordKey);
+        if (res == default(List<UserModel>))
+        {
+            MongoCRUD db = new(Helper.CnnVal());
+            var mongoData = db.GetAllRecords<UserModel>("users");
+            RedisCRUD.SetRecord(recordKey, mongoData);
+            return mongoData;
+        }
         return res;
+        
+        //if(RedisCRUD.GetRecordAsync("Users_"))
+        //var res = db.GetAllRecords<UserModel>("users");
+        //return res;
     }
 
     public static UserModel GetUserByID(Guid id)

@@ -7,7 +7,7 @@
     <Position X="11.939" Y="9.22" Height="0.291" Width="0.7" />
   </Comment>
   <Comment CommentText="DAL">
-    <Position X="8.344" Y="9.259" Height="0.291" Width="0.7" />
+    <Position X="8.671" Y="9.291" Height="0.291" Width="0.7" />
   </Comment>
   <Comment CommentText="BLL">
     <Position X="5.662" Y="9.28" Height="0.291" Width="0.7" />
@@ -21,7 +21,7 @@
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAEAAABAAAAAAAAAAAAAAAAAAAAAAAAgAAAIBAEAAAA=</HashCode>
       <FileName>DAL\Neo4jCRUD.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -69,10 +69,9 @@
     <Position X="2.75" Y="9.75" Width="2" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
-      <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AnAAIGAACCAAwBQESBHAjAACUM4bwIAQECAAQQAYNQA=</HashCode>
+      <HashCode>AnAAIGAACCAgwBQESBHAjAACUM4bwIAQECAAQQAYNQA=</HashCode>
       <FileName>Forms\MainForm.cs</FileName>
       <NewMemberFileName>Forms\mainForm.cs</NewMemberFileName>
     </TypeIdentifier>
@@ -111,7 +110,7 @@
   <Class Name="_3K1SNRDB.Controller">
     <Position X="5.25" Y="9.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAkAAAAIAQQAEABAAAIgAAAAAAAAAAAAAAAIAIEAAAA=</HashCode>
+      <HashCode>AAkAAAAIAQQAEABAAAIgAAAgAAAAAAAAAAAIAIEAAAA=</HashCode>
       <FileName>BLL\Controller.cs</FileName>
     </TypeIdentifier>
   </Class>
